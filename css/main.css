@@ -1,3 +1,18 @@
+/* CSS Custom Properties (Variables) */
+:root {
+	--color-primary: #333;
+	--color-secondary: #949494;
+	--color-accent: #ffbd54;
+	--color-accent-blue: #78c0de;
+	--color-white: #fff;
+	--color-bg: #f9f8f8;
+	--color-border: #e4e4e2;
+	--font-family: 'FuturaPT', 'Arial', sans-serif;
+	--transition-base: 0.3s ease;
+	--border-radius: 5px;
+	--container-max-width: 1440px;
+}
+
 /* Fonts section */
 
 @font-face {
@@ -1309,153 +1324,91 @@ img {
 .service-list__item__heading {
 	font-size: 15px;
 	font-weight: 600;
-	color: #333;
+	color: var(--color-primary);
 	text-decoration: none;
 	margin: 0;
 }
 
-.service-list__item:nth-child(1)::before {
+/* Base styles for service icons - eliminates duplicate properties */
+.service-list__item::before {
 	content: '';
 	display: block;
-	width: 54px;
-	height: 77px;
-	margin: 0 auto;
-	margin-bottom: 22px;
-	background-image: url('../images/service-doctor.svg');
+	margin: 0 auto 22px;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+/* Individual service icon variations - only unique properties */
+.service-list__item:nth-child(1)::before {
+	width: 54px;
+	height: 77px;
+	background-image: url('../images/service-doctor.svg');
 }
 
 .service-list__item:nth-child(2)::before {
-	content: '';
-	display: block;
 	width: 61px;
 	height: 77px;
-	margin: 0 auto;
-	margin-bottom: 22px;
 	background-image: url('../images/service-doctor-f.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 .service-list__item:nth-child(3)::before {
-	content: '';
-	display: block;
 	width: 72px;
 	height: 77px;
-	margin: 0 auto;
-	margin-bottom: 22px;
 	background-image: url('../images/service-ill-dog.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 .service-list__item:nth-child(4)::before {
-	content: '';
-	display: block;
 	width: 76px;
 	height: 76px;
-	margin: 0 auto;
-	margin-bottom: 22px;
 	background-image: url('../images/service-dog.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 .service-list__item:nth-child(5)::before {
-	content: '';
-	display: block;
 	width: 78px;
 	height: 78px;
-	margin: 0 auto;
-	margin-bottom: 22px;
 	background-image: url('../images/service-microscope.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 .service-list__item:nth-child(6)::before {
-	content: '';
-	display: block;
 	width: 76px;
 	height: 76px;
-	margin: 0 auto;
-	margin-bottom: 22px;
 	background-image: url('../images/service-plus-dog.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 .service-list__item:nth-child(7)::before {
-	content: '';
-	display: block;
 	width: 77px;
 	height: 77px;
-	margin: 0 auto;
-	margin-bottom: 22px;
 	background-image: url('../images/service-uzi.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 .service-list__item:nth-child(8)::before {
-	content: '';
-	display: block;
 	width: 40px;
 	height: 78px;
-	margin: 0 auto;
-	margin-bottom: 22px;
 	background-image: url('../images/service-chipirovanie.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 .service-list__item:nth-child(9)::before {
-	content: '';
-	display: block;
 	width: 87px;
 	height: 78px;
-	margin: 0 auto;
-	margin-bottom: 22px;
 	background-image: url('../images/service-passport.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 .service-list__item:nth-child(10)::before {
-	content: '';
-	display: block;
 	width: 68px;
 	height: 76px;
-	margin: 0 auto;
-	margin-bottom: 22px;
 	background-image: url('../images/service-vaksinasiya.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 .service-list__item:nth-child(11)::before {
-	content: '';
-	display: block;
 	width: 78px;
 	height: 78px;
-	margin: 0 auto;
-	margin-bottom: 22px;
 	background-image: url('../images/service-stomatologiya.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 .service-list__item:nth-child(12)::before {
-	content: '';
-	display: block;
 	width: 77px;
 	height: 77px;
-	margin: 0 auto;
-	margin-bottom: 22px;
 	background-image: url('../images/service-plus-vizov-na-dom.svg');
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 .service-item-area {
@@ -2148,26 +2101,13 @@ img {
 	transform: rotate(0deg);
 }
 
-.faq-list__item:nth-child(3) {
-	opacity: 0.5;
-}
-
-.faq-list__item:nth-child(3) .faq-list__item__btn::after {
-	content: '';
-	width: 21px;
-	height: 21px;
-	display: block;
-	margin-right: 7px;
-	background-image: url('../images/faq-clock.svg');
-	background-size: cover;
-	-webkit-transform: rotate(0deg);
-	transform: rotate(0deg);
-}
-
+/* FAQ items with pending/clock state - consolidated */
+.faq-list__item:nth-child(3),
 .faq-list__item:nth-child(6) {
 	opacity: 0.5;
 }
 
+.faq-list__item:nth-child(3) .faq-list__item__btn::after,
 .faq-list__item:nth-child(6) .faq-list__item__btn::after {
 	content: '';
 	width: 21px;
@@ -2176,7 +2116,6 @@ img {
 	margin-right: 7px;
 	background-image: url('../images/faq-clock.svg');
 	background-size: cover;
-	-webkit-transform: rotate(0deg);
 	transform: rotate(0deg);
 }
 
@@ -2709,54 +2648,37 @@ img {
 	margin-top: 30px;
 }
 
-.blog-grid__img {
-	background-image: url(../images/blog-grid-cat.jpg);
+/* Base blog grid image - shared dimensions */
+.blog-grid__img,
+.blog-grid__img--whitedog,
+.blog-grid__img--twodog,
+.blog-grid__img--cat-white,
+.blog-grid__img--maus,
+.blog-grid__img--dog-black,
+.blog-grid__img--dog-choco {
 	width: 305px;
 	height: 180px;
 	display: block;
+	background-size: cover;
+	background-position: center;
 }
 
-.blog-grid__img__whitedog {
-	background-image: url(../images/blog-grid-dog-white.png);
-	width: 305px;
-	height: 180px;
-	display: block;
-}
+/* Blog grid image variations - only background images */
+.blog-grid__img { background-image: url(../images/blog-grid-cat.jpg); }
+.blog-grid__img--whitedog { background-image: url(../images/blog-grid-dog-white.png); }
+.blog-grid__img--twodog { background-image: url(../images/blog-grid-dog-two.png); }
+.blog-grid__img--cat-white { background-image: url(../images/blog-grid-cat-wihte.png); }
+.blog-grid__img--maus { background-image: url(../images/blog-grid-maus.png); }
+.blog-grid__img--dog-black { background-image: url(../images/blog-grid-dog-black.png); }
+.blog-grid__img--dog-choco { background-image: url(../images/blog-grid-dog-choco.png); }
 
-.blog-grid__img__twodog {
-	background-image: url(../images/blog-grid-dog-two.png);
-	width: 305px;
-	height: 180px;
-	display: block;
-}
-
-.blog-grid__img__cat__white {
-	background-image: url(../images/blog-grid-cat-wihte.png);
-	width: 305px;
-	height: 180px;
-	display: block;
-}
-
-.blog-grid__img__maus {
-	background-image: url(../images/blog-grid-maus.png);
-	width: 305px;
-	height: 180px;
-	display: block;
-}
-
-.blog-grid__img__dog__black {
-	background-image: url(../images/blog-grid-dog-black.png);
-	width: 305px;
-	height: 180px;
-	display: block;
-}
-
-.blog-grid__img__dog__choco {
-	background-image: url(../images/blog-grid-dog-choco.png);
-	width: 305px;
-	height: 180px;
-	display: block;
-}
+/* Legacy class support (backwards compatibility) */
+.blog-grid__img__whitedog { background-image: url(../images/blog-grid-dog-white.png); width: 305px; height: 180px; display: block; }
+.blog-grid__img__twodog { background-image: url(../images/blog-grid-dog-two.png); width: 305px; height: 180px; display: block; }
+.blog-grid__img__cat__white { background-image: url(../images/blog-grid-cat-wihte.png); width: 305px; height: 180px; display: block; }
+.blog-grid__img__maus { background-image: url(../images/blog-grid-maus.png); width: 305px; height: 180px; display: block; }
+.blog-grid__img__dog__black { background-image: url(../images/blog-grid-dog-black.png); width: 305px; height: 180px; display: block; }
+.blog-grid__img__dog__choco { background-image: url(../images/blog-grid-dog-choco.png); width: 305px; height: 180px; display: block; }
 
 .blog-grid__content {
 	padding: 21px 30px 37px 30px;
