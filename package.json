@@ -5,6 +5,7 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
+    "build:prod": "eleventy --pathprefix=/Banfield-Pet-Hospital",
     "clean": "rm -rf _site"
   },
   "devDependencies": {
