@@ -30,8 +30,8 @@
         
         <div class="header-bottom">
             <div class="header-bottom-info">
-                <a class="header__link" href="/">
-                    <img class="header__img" src="/images/logo.svg" alt="Logo of site" width="178" height="86">
+                <a class="header__link" href="{{ site.pathPrefix }}/">
+                    <img class="header__img" src="{{ site.pathPrefix }}/images/logo.svg" alt="Logo of site" width="178" height="86">
                 </a>
                 
                 <button type="button" class="header__menu-button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">
@@ -42,29 +42,29 @@
                 <nav class="nav" id="main-navigation" role="navigation" aria-label="Main navigation">
                     <ul class="header-bottom__list">
                         <li class="header-bottom__item{% if page.url == '/' %} header-bottom--active{% endif %}">
-                            <a class="header-bottom__link" href="/">Main</a>
+                            <a class="header-bottom__link" href="{{ site.pathPrefix }}/">Main</a>
                         </li>
                         
                         <li class="header-bottom__item{% if page.url == '/about/' %} header-bottom--active{% endif %}">
-                            <a class="header-bottom__link" href="/about/">About</a>
+                            <a class="header-bottom__link" href="{{ site.pathPrefix }}/about/">About</a>
                         </li>
                         
                         <li class="header-bottom__item{% if page.url == '/services/' %} header-bottom--active{% endif %}">
-                            <a class="header-bottom__link" href="/services/">Services</a>
+                            <a class="header-bottom__link" href="{{ site.pathPrefix }}/services/">Services</a>
                         </li>
                         
                         {% include "mega-menu.njk" %}
                         
                         <li class="header-bottom__item{% if page.url == '/blog/' %} header-bottom--active{% endif %}">
-                            <a class="header-bottom__link" href="/blog/">Blog</a>
+                            <a class="header-bottom__link" href="{{ site.pathPrefix }}/blog/">Blog</a>
                         </li>
                         
                         <li class="header-bottom__item{% if page.url == '/faq/' %} header-bottom--active{% endif %}">
-                            <a class="header-bottom__link" href="/faq/">FAQ</a>
+                            <a class="header-bottom__link" href="{{ site.pathPrefix }}/faq/">FAQ</a>
                         </li>
                         
                         <li class="header-bottom__item{% if page.url == '/contact/' %} header-bottom--active{% endif %}">
-                            <a class="header-bottom__link" href="/contact/">Contact</a>
+                            <a class="header-bottom__link" href="{{ site.pathPrefix }}/contact/">Contact</a>
                         </li>
                         
                         <li>
