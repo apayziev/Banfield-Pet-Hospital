@@ -9,6 +9,7 @@
     <meta name="description" content="Banfield Pet Hospital in Decatur, AL offers comprehensive veterinary care including vaccinations, surgery, diagnostics, and emergency services. Book your appointment today!">
     <meta name="keywords" content="veterinary clinic, pet hospital, animal doctor, pet care, vaccinations, Decatur AL, Banfield">
     <meta name="author" content="Banfield Pet Hospital">
+    <meta name="theme-color" content="#ffbd54">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Banfield Pet Hospital - Quality Pet Care in Decatur, AL">
@@ -17,15 +18,39 @@
     <meta property="og:url" content="https://banfieldpethospital.com">
     <meta property="og:image" content="./images/logo.svg">
     
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Banfield Pet Hospital - Quality Pet Care in Decatur, AL">
+    <meta name="twitter:description" content="Comprehensive veterinary services for your beloved pets.">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./images/logo.svg">
     <link rel="apple-touch-icon" href="./images/logo.svg">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="./css/main.css" as="style">
+    <link rel="preload" href="./font/FuturaPT-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/FuturaPT-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./images/work_bg.png" as="image">
+    <link rel="preload" href="./images/logo.svg" as="image">
+    
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./css/main.css">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://banfieldpethospital.com/">
+    
     <title>Banfield Pet Hospital | Veterinary Care in Decatur, AL</title>
 </head>
 <body>
+    <!-- Skip Navigation Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header section -->
     <header class="header">
         <div class="container">
@@ -73,12 +98,12 @@
                         <img class="header__img" src="./images/logo.svg" alt="Logo of site" width="178" height="86">
                     </a>
                     
-                    <button type="button" class="header__menu-button">
-                        <span>&#9776;</span>
-                        <span>&#x2715;</span>
+                    <button type="button" class="header__menu-button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">
+                        <span class="menu-icon" aria-hidden="true">&#9776;</span>
+                        <span class="close-icon" aria-hidden="true">&#x2715;</span>
                     </button>
                     
-                    <nav class="nav" >
+                    <nav class="nav" id="main-navigation" role="navigation" aria-label="Main navigation">
                         <ul class="header-bottom__list">
                             <li class="header-bottom__item header-bottom--active">
                                 <a class="header-bottom__link" href="./index.html">
@@ -372,7 +397,7 @@
     <!-- /Header section -->
     
     <!-- Main section -->
-    <main class="main">
+    <main class="main" id="main-content">
         <section class="work">
             <div class="container">
                 <div class="work-info">
@@ -550,8 +575,9 @@
                         Stay up to date with the news 
                     </h2>
                     
-                    <form class="subscribe-form" action="#" method="POST">
-                        <input class="subscribe-form__mail" type="email" name="user_mail" placeholder="Enter your email address" aria-label="Enter your email address">
+                    <form class="subscribe-form" action="#" method="POST" novalidate>
+                        <label for="subscribe-email" class="visually-hidden">Email address</label>
+                        <input class="subscribe-form__mail" type="email" id="subscribe-email" name="user_mail" placeholder="Enter your email address" aria-label="Enter your email address" required autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                         
                         <button type="submit" class="subscribe-form__btn">
                             Subscribe
@@ -678,17 +704,20 @@
                         If you have any questions about the work of the clinic or consultations, fill out the form below: 
                     </p>
                     
-                    <form class="communication-form__form" action="#" method="POST">
-                        <input class="communication-form__form__input" type="text" name="user_name" placeholder="Enter your name" aria-label="Enter your name" required>
+                    <form class="communication-form__form" action="#" method="POST" novalidate>
+                        <label for="contact-name" class="visually-hidden">Your name</label>
+                        <input class="communication-form__form__input" type="text" id="contact-name" name="user_name" placeholder="Enter your name" aria-label="Enter your name" required minlength="2" maxlength="100" autocomplete="name">
                         
-                        <input class="communication-form__form__input" type="email" name="user_email" placeholder="Enter your email" aria-label="Enter your email" required>
+                        <label for="contact-email" class="visually-hidden">Your email</label>
+                        <input class="communication-form__form__input" type="email" id="contact-email" name="user_email" placeholder="Enter your email" aria-label="Enter your email" required autocomplete="email">
                         
-                        <textarea class="communication-form__form__input" name="user_massage" cols="30" rows="10" placeholder="Write your question here..."></textarea>
-                        <span class="communication-form__form__input-area">
+                        <label for="contact-message" class="visually-hidden">Your message</label>
+                        <textarea class="communication-form__form__input" id="contact-message" name="user_message" cols="30" rows="10" placeholder="Write your question here..." required minlength="10" maxlength="1000" aria-describedby="message-hint"></textarea>
+                        <span class="communication-form__form__input-area" id="message-hint">
                             For example: At what age should a pet be vaccinated? 
                         </span>
                         
-                        <button class="communication-form__form__btn">
+                        <button class="communication-form__form__btn" type="submit">
                             Send
                         </button>
                     </form>
@@ -801,22 +830,24 @@
     <!-- /Footer section -->
     
     <!-- Modal -->
-    <section class="modal js-modal">
+    <section class="modal js-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
         <div class="form-container">
             <div class="content-wrapper">
                 <div class="left-content__wrapper">
-                    <button class="exit-button" type="button"><img src="./images/modal-exit.svg" alt="Modal exit" width="18" height="18"></button>
+                    <button class="exit-button" type="button" aria-label="Close dialog"><img src="./images/modal-exit.svg" alt="" width="18" height="18"></button>
                     <p class="form-info">Authorization:</p>
                     <a class="google" href="https://accounts.google.com/signin/v2/usernamerecovery?flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" >Login with Google</a>
                     <a class="facebook" href="https://www.facebook.com/?email_confirmed=1" target="_blank">Login with Facebook</a>
                 </div>
                 
-                <form class="input-question" action="#"  method="POST" >
+                <form class="input-question" action="#" method="POST" novalidate>
                     
-                    <h2 class="form-heading">Ask a question</h2>
-                    <input class="input-name" type="text" name="name" placeholder="Enter your name" required>
+                    <h2 class="form-heading" id="modal-title">Ask a question</h2>
+                    <label for="modal-name" class="visually-hidden">Your name</label>
+                    <input class="input-name" type="text" id="modal-name" name="name" placeholder="Enter your name" required minlength="2" maxlength="100" autocomplete="name">
                     
-                    <textarea class="question-input" name="question" cols="30" rows="10" placeholder="Write your question here"></textarea>
+                    <label for="modal-question" class="visually-hidden">Your question</label>
+                    <textarea class="question-input" id="modal-question" name="question" cols="30" rows="10" placeholder="Write your question here" required minlength="10" maxlength="1000"></textarea>
                     
                     <button class="form-button" type="submit">Send</button>
                 </form>
