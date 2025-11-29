@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{ description or site.description }}">
+    <meta name="keywords" content="veterinary clinic, pet hospital, animal doctor, pet care, vaccinations, Decatur AL, Banfield">
+    <meta name="author" content="{{ site.author }}">
+    <meta name="theme-color" content="#ffbd54">
+    {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="{{ title }} - {{ site.name }}">
+    <meta property="og:description" content="{{ description or site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}/images/logo.svg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }} - {{ site.name }}">
+    <meta name="twitter:description" content="{{ description or site.description }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+    <link rel="apple-touch-icon" href="/images/logo.svg">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="preload" href="/font/FuturaPT-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/font/FuturaPT-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    {% if preloadImage %}<link rel="preload" href="{{ preloadImage }}" as="image">{% endif %}
+    <link rel="preload" href="/images/logo.svg" as="image">
+    
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/css/main.css">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    
+    <title>{{ title }} | {{ site.name }}</title>
+</head>
+<body>
+    <!-- Skip Navigation Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    {% include "header.njk" %}
+    
+    <main class="{{ mainClass or 'main' }}" id="main-content">
+        {{ content | safe }}
+    </main>
+    
+    {% include "footer.njk" %}
+    
+    {% include "modal.njk" %}
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>

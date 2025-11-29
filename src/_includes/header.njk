@@ -1,0 +1,79 @@
+<!-- Header section -->
+<header class="header">
+    <div class="container">
+        <div class="header-top">
+            <div class="header-top-info">
+                <address class="header-top__address">
+                    {{ site.address }}
+                </address>
+                
+                <ul class="header-top__list-tel">
+                    {% for phone in site.phones %}
+                    <li class="header-top__item-tel">
+                        <a class="header-top__tel" href="{{ phone.href }}">
+                            {{ phone.display }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+                <ul class="header-top__list-time">
+                    <li class="header-top__item-time">
+                        <span class="header-top__time">{{ site.hours.weekdays }}</span> 
+                    </li>
+                    <li class="header-top__item-time">
+                        <span class="header-top__time">{{ site.hours.weekends }}</span> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="header-bottom">
+            <div class="header-bottom-info">
+                <a class="header__link" href="/">
+                    <img class="header__img" src="/images/logo.svg" alt="Logo of site" width="178" height="86">
+                </a>
+                
+                <button type="button" class="header__menu-button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">
+                    <span class="menu-icon" aria-hidden="true">&#9776;</span>
+                    <span class="close-icon" aria-hidden="true">&#x2715;</span>
+                </button>
+                
+                <nav class="nav" id="main-navigation" role="navigation" aria-label="Main navigation">
+                    <ul class="header-bottom__list">
+                        <li class="header-bottom__item{% if page.url == '/' %} header-bottom--active{% endif %}">
+                            <a class="header-bottom__link" href="/">Main</a>
+                        </li>
+                        
+                        <li class="header-bottom__item{% if page.url == '/about/' %} header-bottom--active{% endif %}">
+                            <a class="header-bottom__link" href="/about/">About</a>
+                        </li>
+                        
+                        <li class="header-bottom__item{% if page.url == '/services/' %} header-bottom--active{% endif %}">
+                            <a class="header-bottom__link" href="/services/">Services</a>
+                        </li>
+                        
+                        {% include "mega-menu.njk" %}
+                        
+                        <li class="header-bottom__item{% if page.url == '/blog/' %} header-bottom--active{% endif %}">
+                            <a class="header-bottom__link" href="/blog/">Blog</a>
+                        </li>
+                        
+                        <li class="header-bottom__item{% if page.url == '/faq/' %} header-bottom--active{% endif %}">
+                            <a class="header-bottom__link" href="/faq/">FAQ</a>
+                        </li>
+                        
+                        <li class="header-bottom__item{% if page.url == '/contact/' %} header-bottom--active{% endif %}">
+                            <a class="header-bottom__link" href="/contact/">Contact</a>
+                        </li>
+                        
+                        <li>
+                            <button class="header-bottom__link-q js-modal-open">Ask a question</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /Header section -->

@@ -14,10 +14,13 @@ Thumbs.db
 *.swo
 *~
 
-# Node modules (if added later)
+# Node modules
 node_modules/
 npm-debug.log
 yarn-error.log
+
+# 11ty build output
+_site/
 
 # Build outputs
 dist/

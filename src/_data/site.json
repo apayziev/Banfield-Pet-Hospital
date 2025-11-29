@@ -1,0 +1,24 @@
+{
+  "name": "Banfield Pet Hospital",
+  "url": "https://banfieldpethospital.com",
+  "description": "Comprehensive veterinary care for your beloved pets in Decatur, AL",
+  "author": "Banfield Pet Hospital",
+  "address": "1241 Point Mallard Pkwy Bldg A-6, Decatur, AL 35601",
+  "phones": [
+    { "display": "(067) 775 - 75 - 75", "href": "tel:+0677757575" },
+    { "display": "(0637) 67 - 77 - 77", "href": "tel:+0637677777" },
+    { "display": "(098) 288 - 98 - 89", "href": "tel:+0982889889" }
+  ],
+  "hours": {
+    "weekdays": "Mon-Fri: 8:00 am - 20:00 pm",
+    "weekends": "Sat-Sun: 10:00 am - 16:00 pm"
+  },
+  "social": {
+    "youtube": "#",
+    "telegram": "#",
+    "facebook": "#",
+    "instagram": "#",
+    "twitter": "#"
+  },
+  "currentYear": "2025"
+}

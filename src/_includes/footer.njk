@@ -1,0 +1,83 @@
+<!-- Footer section -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <a class="header__link" href="/">
+                <img class="header__img" src="/images/logo.svg" alt="{{ site.name }} logo" width="178" height="86">
+            </a>
+            
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a class="footer__link" href="/">Main</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="/about/">About</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="/services/">Services</a>
+                </li>
+            </ul>
+            
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a class="footer__link" href="/blog/">Blog</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="/faq/">FAQ</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="/contact/">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="main-section__social-networks">
+                {% if site.social.youtube %}
+                <a href="{{ site.social.youtube }}" aria-label="Visit our YouTube channel">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+                {% if site.social.telegram %}
+                <a href="{{ site.social.telegram }}" aria-label="Join our Telegram">
+                    <i class="fab fa-telegram" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+                {% if site.social.facebook %}
+                <a href="{{ site.social.facebook }}" aria-label="Follow us on Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+                {% if site.social.instagram %}
+                <a href="{{ site.social.instagram }}" aria-label="Follow us on Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+                {% if site.social.twitter %}
+                <a href="{{ site.social.twitter }}" aria-label="Follow us on Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+            </div>
+            
+            <address class="header-top__address">
+                {{ site.address }}
+            </address>
+            
+            <ul class="header-top__list-tel">
+                {% for phone in site.phones %}
+                <li class="header-top__item-tel">
+                    <a class="header-top__tel" href="{{ phone.href }}">
+                        {{ phone.display }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="footer__author">
+                © {{ site.currentYear }} {{ site.name }}. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+<!-- /Footer section -->
