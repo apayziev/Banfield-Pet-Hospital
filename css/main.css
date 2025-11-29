@@ -157,6 +157,7 @@ select {
 [type='submit'],
 button {
 	-webkit-appearance: button;
+	appearance: button;
 }
 
 [type='button']::-moz-focus-inner,
@@ -210,6 +211,7 @@ textarea {
 
 [type='search'] {
 	-webkit-appearance: textfield;
+	appearance: textfield;
 	outline-offset: -2px;
 }
 
@@ -598,7 +600,7 @@ img {
 	display: block;
 }
 
-.header-bottom--acive.header-bottom__item::before {
+.header-bottom--active.header-bottom__item::before {
 	display: block;
 }
 
@@ -2765,20 +2767,24 @@ img {
 
 /* Company section */
 
+.company-info,
 .conpany-info {
 	padding-top: 24px;
 }
 
+.company-info .container,
 .conpany-info .container {
 	padding: 0;
 }
 
+.company-info__content,
 .conpany-info__content {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 
+.company-info__text,
 .conpany-info__text {
 	padding: 130px 66px 140px;
 	max-width: 560px;
@@ -2786,33 +2792,40 @@ img {
 	color: #949494;
 }
 
+.company-info__text .company-info__text__orange,
 .conpany-info__text .conpany-info__text__orange {
 	color: #ffbd54;
 }
 
+.company-info__text .company-info__text__blue,
 .conpany-info__text .conpany-info__text__blue {
 	color: #78c0de;
 }
 
+.company-info__text .company-info__text__span,
 .conpany-info__text .conpany-info__text__span {
 	margin-top: 20px;
 }
 
+.company-feature,
 .conpany-feature {
 	padding-top: 20px;
 	padding-bottom: 145px;
 }
 
+.company-feature__wrapper,
 .conpany-feature__wrapper {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 
+.company-feature__content,
 .conpany-feature__content {
 	margin-right: 20px;
 }
 
+.company-feature__heading,
 .conpany-feature__heading {
 	font-weight: 700;
 	font-size: 46px;
@@ -2821,21 +2834,25 @@ img {
 	width: 420px;
 }
 
+.company-feature__heading span,
 .conpany-feature__heading span {
 	color: #ffbd54;
 }
 
+.company-feature__text,
 .conpany-feature__text {
 	width: 343px;
 	color: #949494;
 }
 
+.company-feature__img,
 .conpany-feature__img {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 
+.company-feature__img img:not(:last-child),
 .conpany-feature__img img:not(:last-child) {
 	margin-right: 20px;
 }
